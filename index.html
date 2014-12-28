@@ -1,0 +1,78 @@
+
+
+
+
+<script>
+(function(){
+    function addFont() {
+        var style = document.createElement('style');
+        style.rel = 'stylesheet';
+        document.head.appendChild(style);
+        style.textContent = localStorage.webfonts;
+    }
+
+    try {
+        if (localStorage.webfonts) {
+            // The font is in localStorage, we can load it directly
+            addFont();
+        } else {
+            // We have to first load the font file asynchronously
+            var request = new XMLHttpRequest();
+            // Change this line!
+            request.open('GET', '/assets/css/font/stylesheet.css', true);
+
+            request.onload = function() {
+                if (request.status >= 200 && request.status < 400) {
+                    // We save the file in localStorage
+                    localStorage.webfonts = request.responseText;
+
+                    // ... and load the font
+                    addFont();
+                }
+            }
+
+            request.send();
+        }
+    } catch(ex) {
+        // maybe load the font synchronously for woff-capable browsers
+        // to avoid blinking on every request when localStorage is not available
+    }
+}());
+</script>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="logo"></div>
+      <nav></nav>
+    </header>
+  </div>
+
+  <div class="main">
+    <article class="horizontal">
+      <img src="" alt="">
+      <div class="art">
+        <div class="content">
+          <h1 class="title"></h1>
+          <div class="sm-icons"></div>
+          <div class="body"></div>
+          <div class="comments"></div>
+        </div>
+        <div class="art-info">
+          <div class="location"></div>
+          <div class="tags"></div>
+        </div>
+        <div class="art-metadata">
+          <div class="number"></div>
+          <div class="date"></div>
+          <div class="time"></div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <footer></footer>
+
+</body>
+</html>
+

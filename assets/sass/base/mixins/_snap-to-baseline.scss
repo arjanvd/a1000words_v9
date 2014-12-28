@@ -1,0 +1,9 @@
+@mixin snap-to-baseline($aspect-ratio){
+  $width-per-base-line: $base-line-height * $aspect-ratio;
+  @for $i from 1 to round($max-width / $width-per-base-line) {
+    &[min-width~="#{round($width-per-base-line * $i )}"] {
+      height: round($base-line-height * $i );
+    }
+  }
+}
+
