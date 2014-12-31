@@ -1,77 +1,57 @@
 
+<!DOCTYPE HTML>
 
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="modern"> <!--<![endif]-->
 
+<head>
+	<title>365 single page</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<script src="assets/js/head.js"></script>
+	<link rel="stylesheet" media="screen" href="assets/css/site.css">
+</head>
 
-<script>
-(function(){
-    function addFont() {
-        var style = document.createElement('style');
-        style.rel = 'stylesheet';
-        document.head.appendChild(style);
-        style.textContent = localStorage.webfonts;
-    }
+<body class="body--365">
 
-    try {
-        if (localStorage.webfonts) {
-            // The font is in localStorage, we can load it directly
-            addFont();
-        } else {
-            // We have to first load the font file asynchronously
-            var request = new XMLHttpRequest();
-            // Change this line!
-            request.open('GET', '/assets/css/font/stylesheet.css', true);
+    <div class="wrapper">
 
-            request.onload = function() {
-                if (request.status >= 200 && request.status < 400) {
-                    // We save the file in localStorage
-                    localStorage.webfonts = request.responseText;
-
-                    // ... and load the font
-                    addFont();
-                }
-            }
-
-            request.send();
-        }
-    } catch(ex) {
-        // maybe load the font synchronously for woff-capable browsers
-        // to avoid blinking on every request when localStorage is not available
-    }
-}());
-</script>
-
-<body>
-  <div class="wrapper">
     <header>
-      <div class="logo"></div>
+      <div class="logo"><img src="svg/atw.svg?id=one#svgView(viewBox(15,0,76,35))"></div>
+      <h1 class="title">athousandwords<span class="title--dot">.</span>nl</h1>
+      <h2 class="byline"><i>door</i> Arjan van Drielen</h2>
       <nav></nav>
     </header>
-  </div>
 
-  <div class="main">
-    <article class="horizontal">
-      <img src="" alt="">
-      <div class="art">
-        <div class="content">
-          <h1 class="title"></h1>
-          <div class="sm-icons"></div>
-          <div class="body"></div>
-          <div class="comments"></div>
+    <div class="main">
+      <article class="vertical">
+        <div class="art-image">
+          <img src="http://fillmurray.com/1200/900" alt="" />
         </div>
-        <div class="art-info">
-          <div class="location"></div>
-          <div class="tags"></div>
+        <div class="art art--365">
+          <div class="content">
+            <h1 class="h3">Dit is een titel</h1>
+            <div class="sm-icons">hier komen icoontjes</div>
+            <div class="body"><p>Lebowski ipsum and I'm talkin' about the Dude here —sometimes there's a man who, wal, he's the man for his time'n place, he fits right in there—and that's the Dude, in Los Angeles. Jesus, man, can you change the station? Hey, man, if my fucking ex-wife asked me to take care of her fucking dog while she and her boyfriend went to Honolulu, I'd tell her to go fuck herself.</p></div>
+            <div class="comments">Reacties</div>
+          </div>
+          <div class="art-info">
+            <div class="location">Rotterdam</div>
+            <div class="tags">Euromast</div>
+          </div>
+          <div class="art-metadata">
+            <div class="number">342</div>
+            <div class="date">10 december 2015</div>
+            <div class="time">9.42 uur</div>
+          </div>
         </div>
-        <div class="art-metadata">
-          <div class="number"></div>
-          <div class="date"></div>
-          <div class="time"></div>
-        </div>
-      </div>
-    </article>
-  </div>
+      </article>
+    </div>
 
-  <footer></footer>
+    <footer></footer>
+
+  </div>
 
 </body>
 </html>

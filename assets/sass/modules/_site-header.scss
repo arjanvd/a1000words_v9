@@ -1,0 +1,61 @@
+/**
+
+  @site-header
+--------------------------------------------------------
+  modules/_site-header.scss
+--------------------------------------------------------
+
+  Site-wide header
+
+------------------------------------------------------ */
+
+
+
+
+
+
+/* @branding
+--------------------------------------------------------
+
+  The logo & (optional) wordmark
+
+  Example: Branding logo
+  <a class="branding" href="/">
+    <img class="branding__logo img--title" src="images/logo.svg" alt="My Company">
+    <h1 class="branding__wordmark">My Company</h1>
+  </a>
+
+------------------------------------------------------ */
+
+.logo {
+  @include span(2 of 12);
+}
+
+.title {
+  @include set-type(8,$ms-up3);
+  font-family: $font-sans;
+  text-transform: uppercase;
+
+  &--dot {
+    color: blue;
+  }
+}
+
+.byline {
+  font-family: $font-serif;
+  text-transform: none;
+  @include set-type(4, $ms-up1);
+}
+
+
+
+
+/*
+
+  @site-nav
+--------------------------------------------------------
+
+  The main site navigation.
+
+-----------------------------------------------------  */
+

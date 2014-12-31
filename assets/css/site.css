@@ -1,0 +1,563 @@
+/****
+
+  MAIN STYLESHEET for [* Site Name Here *]
+
+---------------------------------------------------------
+
+  BUILT WITH SKYLINE: EVOLVING CSS ARCHITECTURE
+
+  See README.md for info and credits
+
+---------------------------------------------------------
+
+  TABLE OF CONTENTS
+  @toc
+
+  - Base ............ foundations, mixins, functions, vars
+  - Elements ........ single elements
+  - Layout .......... layout objects like grids, containers
+  - Modules ......... objects created by combining elements
+
+---------------------------------------------------------  */
+/***
+
+  @base
+---------------------------------------------------------
+
+  Your CSS begins with some global variables, a reset which
+  is basically Normalize, some mixins, and a print stylesheet.
+
+-----------------------------------------------------  */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/***
+
+  @elements
+---------------------------------------------------------
+
+  Global styling of elements.
+
+---------------------------------------------------------  */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+* {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/*
+* + * {
+  margin-top: 1.5em;
+}
+*/
+/**
+
+   @html
+--------------------------------------------------------
+  elements/_html.scss
+--------------------------------------------------------
+
+  HTML should contain the site's default background color
+  and font-size
+
+------------------------------------------------------ */
+/*
+html {
+  // Check out base/_mixin-gradual-media-queries.scss
+  // for an explaination of this mixin that gradually
+  // changes the base fontsize.
+  font-size: 80%;
+  @include gradual-queries(20em, 80%, 80em, 100%, 10em);
+}
+
+*/
+html {
+  font-size: 87.5%;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  @media (min-width: 480px) {
+    html {
+      font-size: 100%; } }
+  @media (min-width: 996px) {
+    html {
+      font-size: 112.5%; } }
+  @media (min-width: 1140px) {
+    html {
+      font-size: 125%; } }
+
+/**
+
+  @body
+--------------------------------------------------------
+  elements/_body.scss
+--------------------------------------------------------
+
+  Body should contain the document's default font and
+  background color for the content, if that background
+  color is different than the html.
+
+------------------------------------------------------ */
+body {
+  padding: 0 1%; }
+  @media (min-width: 1440px) {
+    body {
+      padding: 0; } }
+
+.body--365 {
+  background: url(img/bg.png) 0 0 repeat; }
+
+/**
+
+  @headings
+--------------------------------------------------------
+  elements/_headings.scss
+--------------------------------------------------------
+
+  We set any base styles for any headings that have
+  no classnames.
+
+  Example: Headings
+  <h1>This is an h1 heading</h1>
+  <h2>This is an h2 heading</h2>
+  <h3>This is an h3 heading</h3>
+  <h4>This is an h4 heading</h4>
+  <h5>This is an h5 heading</h5>
+  <h6>This is an h6 heading</h6>
+
+  Additionally, we add classnames so you
+  can apply the styling of, for instance, an h1 to an h2.
+
+  Example: H1 styled like an H3
+  <h1 class="h3">This is an h1 but looks like an h3</h1>
+
+------------------------------------------------------ */
+h2, .h2 {
+  margin-bottom: 1em; }
+
+h3, .h3 {
+  margin-bottom: 1em; }
+
+h4, .h4 {
+  margin-bottom: 1em; }
+
+h5, .h5 {
+  margin-bottom: 1em; }
+
+h6, .h6 {
+  margin-bottom: 1em; }
+
+.branding {
+  font-size: 4.2087269129em;
+  line-height: 1.0692069343;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase; }
+  .branding--dot {
+    color: blue; }
+  .branding--name {
+    font-family: "Aleo", Georgia, "Times New Roman", serif;
+    text-transform: none;
+    font-size: 0.5627813555em;
+    line-height: 0; }
+
+/**
+
+  @images
+---------------------------------------------------------
+  elements/_images.scss
+--------------------------------------------------------
+
+  Base styling for images, plus some helpful utility
+  classes that modify images.
+
+  Note: You won't add any styling to these image classes,
+  these are just utility classes
+
+--------------------------------------------------------- */
+/* @images
+--------------------------------------------------------
+
+  Base Image Style is 100% width by default
+
+  Example: Image
+  <img src="http://fillmurray.com/600/300">
+
+------------------------------------------------------ */
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle; }
+
+/* @img--natural
+--------------------------------------------------------
+
+  Natural Images are 100% max-width, but their natural width by default
+
+  Example: Image, Natural Width
+  <img class="img--natural" src="http://fillmurray.com/600/300">
+
+------------------------------------------------------ */
+.img--natural {
+  width: auto; }
+
+/* @img--title
+--------------------------------------------------------
+
+  Title images fit within a heading/title element
+
+  Example: Image inside a title (.img--title)
+  <h1><img class="img--title" src="http://fillmurray.com/300/300"> Title Here versions of Lorem Ipsum.</h1>
+  <h2><img class="img--title" src="http://fillmurray.com/300/300"> Title Here versions of Lorem Ipsum.</h2>
+  <h3><img class="img--title" src="http://fillmurray.com/300/300"> Title Here versions of Lorem Ipsum.</h3>
+
+------------------------------------------------------
+.img--title {
+  height: 1em;
+  width: auto;
+  vertical-align: top;
+}
+
+
+*/
+/* @image placement
+--------------------------------------------------------
+
+  Here are a few helper classes to position images, particularly
+  helpful inside paragraphs.
+
+  Example: Image Right
+  <p><img class="img--right" src="http://fillmurray.com/400/300"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+  Example: Image, Natural Width
+  <p><img class="img--left" src="http://fillmurray.com/400/300"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+  Example: Image, Center
+  <p><img class="img--center" src="http://fillmurray.com/400/300"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+------------------------------------------------------ */
+.img--right {
+  width: auto;
+  float: right; }
+
+.img--left {
+  width: auto;
+  float: left; }
+
+.img--center {
+  width: auto;
+  display: block;
+  margin-right: auto;
+  margin-left: auto; }
+
+.img--right img,
+.img--left img,
+.img--center img {
+  width: auto; }
+
+/* @img--circle
+--------------------------------------------------------
+
+  Popular circle image for bios etc.
+
+  Example: Circle image
+  <img class="img--circle" src="http://fillmurray.com/400/400">
+
+------------------------------------------------------ */
+.img--circle {
+  border-radius: 50%; }
+
+  /***
+
+  @layout
+---------------------------------------------------------
+
+  A large portion of CSS is structural layout. You will use
+  these helpers to create the scaffolding that will support
+  the elements that make up your site.
+
+---------------------------------------------------------  */
+/**
+
+  @container
+--------------------------------------------------------
+  layout/_container.scss
+--------------------------------------------------------
+
+  The .container class is applied to restrict the
+  max-width of an element, usually a bit of content.
+
+  Often, you will place a .container div within another
+  element that has a background color. This gives you
+  a full-bleed background, but the content is contained
+  within the max-width.
+
+  Example: Container within a section
+  <section class="awesome-section-with-background-color">
+    <div class="container">
+      <p>Your content goes here... </p>
+    </div>
+  </section>
+
+------------------------------------------------------ */
+.wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  .wrapper:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/***
+
+  @modules
+---------------------------------------------------------
+
+  Reusable objects that are combinations
+  of elements and other modules.
+
+  When you create a new module, make sure the partial is
+  in the modules directory, and you import it below
+
+  Comment out any partial you don't need for this app.
+
+---------------------------------------------------------  */
+.horizontal .content {
+  width: 49.1525423729%;
+  float: left;
+  margin-right: 1.6949152542%; }
+
+.horizontal .art-info {
+  width: 23.7288135593%;
+  float: left;
+  margin-right: 1.6949152542%; }
+
+.horizontal .art-metadata {
+  width: 23.7288135593%;
+  float: right;
+  margin-right: 0; }
+
+.vertical .art-image {
+  width: 49.1525423729%;
+  float: left;
+  margin-right: 1.6949152542%; }
+
+.vertical .art {
+  width: 49.1525423729%;
+  float: right;
+  margin-right: 0; }
+
+/**
+
+  @site-header
+--------------------------------------------------------
+  modules/_site-header.scss
+--------------------------------------------------------
+
+  Site-wide header
+
+------------------------------------------------------ */
+/* @branding
+--------------------------------------------------------
+
+  The logo & (optional) wordmark
+
+  Example: Branding logo
+  <a class="branding" href="/">
+    <img class="branding__logo img--title" src="images/logo.svg" alt="My Company">
+    <h1 class="branding__wordmark">My Company</h1>
+  </a>
+
+------------------------------------------------------ */
+.logo {
+  width: 15.2542372881%;
+  float: left;
+  margin-right: 1.6949152542%; }
+
+.title {
+  font-size: 2.368593037em;
+  line-height: 1.2665746936;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase; }
+  .title--dot {
+    color: blue; }
+
+.byline {
+  font-family: "Aleo", Georgia, "Times New Roman", serif;
+  text-transform: none;
+  font-size: 1.333em;
+  line-height: 1.1252813203; }
+
+/*
+
+  @site-nav
+--------------------------------------------------------
+
+  The main site navigation.
+
+-----------------------------------------------------  */
+/* --------------------------------------------------------------
+
+ Hartija Css Print  Framework
+   * Version:   1.0
+
+-------------------------------------------------------------- */
+@media print {
+  body {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.45;
+    font-family: Garamond,"Times New Roman", serif;
+    color: #000;
+    background: none;
+    font-size: 14pt; }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid; }
+
+  h1 {
+    font-size: 19pt; }
+
+  h2 {
+    font-size: 17pt; }
+
+  h3 {
+    font-size: 15pt; }
+
+  h4, h5, h6 {
+    font-size: 14pt; }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+  code {
+    font: 12pt Courier, monospace; }
+
+  blockquote {
+    margin: 1.2em;
+    padding: 1em;
+    font-size: 12pt; }
+
+  hr {
+    background-color: #ccc; }
+
+  /* Images */
+  img {
+    float: left;
+    margin: 1em 1.5em 1.5em 0;
+    max-width: 100% !important; }
+
+  a img {
+    border: none; }
+
+  /* Links */
+  a:link, a:visited {
+    background: transparent;
+    font-weight: 700;
+    text-decoration: underline;
+    color: #333; }
+
+  a:link[href^="http://"]:after, a[href^="http://"]:visited:after {
+    content: " (" attr(href) ") ";
+    font-size: 90%; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  /* Don't show linked images  */
+  a[href^="http://"] {
+    color: #000; }
+
+  a[href$=".jpg"]:after, a[href$=".jpeg"]:after, a[href$=".gif"]:after, a[href$=".png"]:after {
+    content: " (" attr(href) ") ";
+    display: none; }
+
+  /* Don't show links that are fragment identifiers, or use the `javascript:` pseudo protocol .. taken from html5boilerplate */
+  a[href^="#"]:after, a[href^="javascript:"]:after {
+    content: ""; }
+
+  /* Table */
+  table {
+    margin: 1px;
+    text-align: left; }
+
+  th {
+    border-bottom: 1px solid #333;
+    font-weight: bold; }
+
+  td {
+    border-bottom: 1px solid #333; }
+
+  th, td {
+    padding: 4px 10px 4px 0; }
+
+  tfoot {
+    font-style: italic; }
+
+  caption {
+    background: #fff;
+    margin-bottom: 2em;
+    text-align: left; }
+
+  thead {
+    display: table-header-group; }
+
+  img, tr {
+    page-break-inside: avoid; }
+
+  /* Hide various parts from the site
+  #header, #footer, #navigation, #rightSideBar, #leftSideBar
+  {display:none;}
+  */ }

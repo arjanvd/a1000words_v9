@@ -24,22 +24,10 @@
 
 ------------------------------------------------------ */
 
-// Generic styles for headings
-
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-
-  }
-
 
 // H1
 h1, .h1 {
-  margin-bottom: vr(3,$m-ms-up5);
-  @include set-type(5, $m-ms-up5);
+//  margin-bottom: 1em;
 }
 
 
@@ -75,3 +63,22 @@ h5, .h5 {
 h6, .h6 {
   margin-bottom: 1em;
 }
+
+
+.branding {
+  @include set-type(12,$ms-up5);
+  font-family: $font-sans;
+  text-transform: uppercase;
+
+  &--dot {
+    color: blue;
+  }
+  &--name {
+    font-family: $font-serif;
+    text-transform: none;
+    @include set-type(0, $ms-down2);
+  }
+
+}
+
+

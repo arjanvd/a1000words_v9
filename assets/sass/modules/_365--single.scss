@@ -1,0 +1,19 @@
+.horizontal .content {
+  @include span(6 of 12);
+}
+
+.horizontal .art-info {
+  @include span(3 at 7 of 12);
+}
+
+.horizontal .art-metadata {
+  @include span(3 at 10 of 12 last);
+}
+
+.vertical .art-image {
+  @include span(6 of 12);
+}
+
+.vertical .art {
+  @include span(6 of 12 last);
+}

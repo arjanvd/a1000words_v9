@@ -1,0 +1,38 @@
+/**
+
+   @html
+--------------------------------------------------------
+  elements/_html.scss
+--------------------------------------------------------
+
+  HTML should contain the site's default background color
+  and font-size
+
+------------------------------------------------------ */
+/*
+html {
+  // Check out base/_mixin-gradual-media-queries.scss
+  // for an explaination of this mixin that gradually
+  // changes the base fontsize.
+  font-size: 80%;
+  @include gradual-queries(20em, 80%, 80em, 100%, 10em);
+}
+
+*/
+
+
+html {
+    font-size: ($base-font-size / 16px) * 87.5%; // 14px
+//    color: $text-color;
+    font-family: $font-sans;
+    @include bp(x-small) {
+        font-size: ($base-font-size / 16px) * 100%; // 16px
+    }
+    @include bp(large) {
+        font-size: ($base-font-size / 16px) * 112.5%; // 18px
+    }
+    @include bp(x-large) {
+        font-size: ($base-font-size / 16px) * 125%; // 20px
+    }
+}
+

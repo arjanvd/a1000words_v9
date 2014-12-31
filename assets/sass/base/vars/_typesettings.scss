@@ -192,15 +192,7 @@ $m-ms-up5:   $ms-up4 * ms-ratio(ms8-9); // [8] 29px
 
 // Sets the font-size of the project as a percentage. Making it easy to
 // scale up/down the whole project for specific media queries
-html {
-  font-size: ($base-font-size / 16px) * 100%;
-}
 
-body {
-  margin: 0;
-  padding: 0;
-  @include set-leading();
-}
 
 @if $load-typesetted {
   //==============================================================================

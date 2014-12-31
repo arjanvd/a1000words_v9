@@ -1,0 +1,24 @@
+/**
+
+  @body
+--------------------------------------------------------
+  elements/_body.scss
+--------------------------------------------------------
+
+  Body should contain the document's default font and
+  background color for the content, if that background
+  color is different than the html.
+
+------------------------------------------------------ */
+
+
+body {
+  padding: 0 1%;
+  @include bp(xx-large) {
+    padding: 0;
+  }
+}
+
+.body--365 {
+  background: url(img/bg.png) 0 0 repeat;
+}

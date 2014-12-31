@@ -32,11 +32,11 @@
 
   // Configs
 
+  @import "susy";
   @import "base/config/typesettings";
 
   // Vars
 
-  @import "susy"
   @import "base/vars/colours";
   @import "base/vars/breakpoints";
   @import "base/vars/susy--settings";
@@ -45,11 +45,11 @@
   // Mixins
 
   @import "base/mixins/clearfix";
-  @import "base/mixins/font-face-importer";
+  @import "base/mixins/snap-to-baseline";
 
   // Fonts
 
-  @import "base/fonts" // Als ik al @import "base/config/typesettings"; heb, is deze dan nog nodig of moet ik de twee samenvoegen?
+ // @import "base/fonts"; // Als ik al @import "base/config/typesettings"; heb, is deze dan nog nodig of moet ik de twee samenvoegen?
 
   // Reset
 
@@ -77,25 +77,25 @@
 
   @import "elements/headings";
 
-  @import "elements/text";
+//  @import "elements/text";
 
-  @import "elements/links";
+//  @import "elements/links";
 
-  @import "elements/lists";
+//  @import "elements/lists";
 
-  @import "elements/quotes";
+//  @import "elements/quotes";
 
   @import "elements/images";
 
-  @import "elements/icons";
+//  @import "elements/icons";
+//
+//  @import "elements/buttons";
 
-  @import "elements/buttons";
+//  @import "elements/code";
 
-  @import "elements/code";
+//  @import "elements/forms";
 
-  @import "elements/forms";
-
-  @import "elements/hr";
+//  @import "elements/hr";
 
 
 
@@ -119,18 +119,7 @@
 
 ---------------------------------------------------------  */
 
-  @import "layout/container";
-
-  @import "layout/grids";
-
-  @import "layout/hide";
-
-  @import "layout/media";
-
-  @import "layout/ups";
-
-  @import "layout/widths";
-
+  @import "layout/wrapper";
 
 
 
@@ -153,35 +142,37 @@
 
   // Site Modules
   //
-  @import "modules/site";
+//  @import "modules/site";
+
+  @import "modules/365--single";
 
   @import "modules/site-header";
+//
+//  @import "modules/site-main";
 
-  @import "modules/site-main";
-
-  @import "modules/site-footer";
+//  @import "modules/site-footer";
 
 
   // Page Template Module
   //
-  @import "modules/pages";
+//  @import "modules/pages";
 
 
   // Component Modules
   //
-  @import "modules/alerts";
+//  @import "modules/alerts";
 
-  @import "modules/blocks";
+//  @import "modules/blocks";
 
-  @import "modules/callouts";
+//  @import "modules/callouts";
 
-  @import "modules/heroes";
+//  @import "modules/heroes";
 
-  @import "modules/modals";
+//  @import "modules/modals";
 
-  @import "modules/thumbnails";
+//  @import "modules/thumbnails";
 
-  @import "modules/video-embeds";
+//  @import "modules/video-embeds";
 
 
 

@@ -1,11 +1,11 @@
 $breakpoints: (
-  'bp480':  ( min-width:  480px ),
-  'bp600':  ( min-width:  600px ),
-  'bp756':  ( min-width:  756px ),
-  'bp996':  ( min-width:  996px ),
-  'bp1140': ( min-width: 1140px ),
-  'bp1440': ( min-width: 1440px ),
-  'bp1740': ( min-width: 1740px ),
+  'x-small':  ( min-width:  480px ),
+  'small':  ( min-width:  600px ),
+  'medium':  ( min-width:  756px ),
+  'large':  ( min-width:  996px ),
+  'x-large': ( min-width: 1140px ),
+  'xx-large': ( min-width: 1440px ),
+  'xxx-large': ( min-width: 1740px ),
 );
 
 @mixin bp($name) {
