@@ -13,6 +13,34 @@ $text-color: #222 !default;
 
 // == Sans serifs ==
 
+%font-sans-thin { font-family: $font-sans; font-weight: 100; font-style: normal; }
+%font-sans-light { font-family: $font-sans; font-weight: 300; font-style: normal; }
+%font-sans-normal { font-family: $font-sans; font-weight: 400; font-style: normal; }
+%font-sans-bold { font-family: $font-sans; font-weight: 700; font-style: normal; }
+%font-sans-black { font-family: $font-sans; font-weight: 900; font-style: normal; }
+
+%font-sans-thin-i { font-family: $font-sans; font-weight: 100; font-style: italic; }
+%font-sans-light-i { font-family: $font-sans; font-weight: 300; font-style: italic; }
+%font-sans-normal-i { font-family: $font-sans; font-weight: 400; font-style: italic; }
+%font-sans-bold-i { font-family: $font-sans; font-weight: 700; font-style: italic; }
+%font-sans-black-i { font-family: $font-sans; font-weight: 900; font-style: italic; }
+
+
+// == Serifs ==
+
+%font-serif-thin { font-family: $font-serif; font-weight: 100; font-style: normal; }
+%font-serif-light { font-family: $font-serif; font-weight: 300; font-style: normal; }
+%font-serif-normal { font-family: $font-serif; font-weight: 400; font-style: normal; }
+%font-serif-bold { font-family: $font-serif; font-weight: 700; font-style: normal; }
+%font-serif-black { font-family: $font-serif; font-weight: 900; font-style: normal; }
+
+%font-serif-thin-i { font-family: $font-serif; font-weight: 100; font-style: italic; }
+%font-serif-light-i { font-family: $font-serif; font-weight: 300; font-style: italic; }
+%font-serif-normal-i { font-family: $font-serif; font-weight: 400; font-style: italic; }
+%font-serif-bold-i { font-family: $font-serif; font-weight: 700; font-style: italic; }
+%font-serif-black-i { font-family: $font-serif; font-weight: 900; font-style: italic; }
+
+
 // The vertical grid unit. Margin, padding, and line-height are set to multiples
 // of this value. This is the value that determines the baseline for our vertical
 // rhythm. The default value of 6px allows more fine tuned designs that still

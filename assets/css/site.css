@@ -28,6 +28,16 @@
   is basically Normalize, some mixins, and a print stylesheet.
 
 -----------------------------------------------------  */
+.menu a {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal; }
+
+h1, .h1, h3, .h3 {
+  font-family: "Aleo", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-style: normal; }
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -124,7 +134,7 @@ html {
 html {
   font-size: 87.5%;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  @media (min-width: 480px) {
+  @media (min-width: 600px) {
     html {
       font-size: 100%; } }
   @media (min-width: 996px) {
@@ -180,11 +190,16 @@ body {
   <h1 class="h3">This is an h1 but looks like an h3</h1>
 
 ------------------------------------------------------ */
+h1, .h1 {
+  font-size: 3.1573345183em;
+  line-height: 1.4252528435; }
+
 h2, .h2 {
   margin-bottom: 1em; }
 
 h3, .h3 {
-  margin-bottom: 1em; }
+  font-size: 2.368593037em;
+  line-height: 1.2665746936; }
 
 h4, .h4 {
   margin-bottom: 1em; }
@@ -348,15 +363,6 @@ img {
   </section>
 
 ------------------------------------------------------ */
-.wrapper {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto; }
-  .wrapper:after {
-    content: " ";
-    display: block;
-    clear: both; }
-
 /***
 
   @modules
@@ -371,6 +377,15 @@ img {
   Comment out any partial you don't need for this app.
 
 ---------------------------------------------------------  */
+.main {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  .main:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
 .horizontal .content {
   width: 49.1525423729%;
   float: left;
@@ -418,24 +433,46 @@ img {
   </a>
 
 ------------------------------------------------------ */
-.logo {
-  width: 23.7288135593%;
-  float: left;
-  margin-right: 1.6949152542%; }
+header {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  header:after {
+    content: " ";
+    display: block;
+    clear: both; }
 
-.title {
-  font-size: 2.368593037em;
-  line-height: 1.2665746936;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase; }
-  .title--dot {
-    color: blue; }
+@media (min-width: 600px) {
+  .logo {
+    width: 23.7288135593%;
+    float: left;
+    margin-right: 1.6949152542%; } }
 
-.byline {
-  font-family: "Aleo", Georgia, "Times New Roman", serif;
-  text-transform: none;
-  font-size: 1.333em;
-  line-height: 1.1252813203; }
+nav {
+  display: inline-block; }
+  @media (min-width: 600px) {
+    nav {
+      width: 74.5762711864%;
+      float: right;
+      margin-right: 0; } }
+
+.menu {
+  text-align: center;
+  width: 100%; }
+  .menu li {
+    display: inline;
+    text-transform: uppercase; }
+  .menu a {
+    display: inline-block;
+    padding: 0.8439609902em 0 0.2813203301em;
+    transition: all 0.3s ease;
+    color: #fff;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 1.333em;
+    line-height: 2.2505626407; }
+    .menu a:hover {
+      background-image: linear-gradient(to bottom, #fff 5px, rgba(255, 255, 255, 0) 5px); }
 
 /*
 

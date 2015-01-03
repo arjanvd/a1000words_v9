@@ -26,27 +26,46 @@
   </a>
 
 ------------------------------------------------------ */
-
-.logo {
-  @include span(3 of 12);
+header {
+  @include container;
 }
 
-.title {
-  @include set-type(8,$ms-up3);
-  font-family: $font-sans;
-  text-transform: uppercase;
-
-  &--dot {
-    color: blue;
+.logo {
+  @include bp(small) {
+    @include span(3 of 12);
   }
 }
 
-.byline {
-  font-family: $font-serif;
-  text-transform: none;
-  @include set-type(4, $ms-up1);
+nav {
+  display: inline-block;
+  @include bp(small) {
+    @include span(9 at 4 of 12 last);
+  }
 }
 
+.menu {
+  text-align: center;
+  width: 100%;
+    li {
+      display: inline;
+      text-transform: uppercase;
+    }
+    a {
+      display: inline-block;
+      padding: vr(3, $ms-up1) 0 vr(1, $ms-up1);
+      transition: all 0.3s ease;
+      color: $white;
+      @include pad(1em);
+      @include set-type(8, $ms-up1);
+      @extend %font-sans-normal;
+        &:hover {
+          background-image: linear-gradient(to bottom, $white 5px, rgba(255,255,255,0) 5px); // een kleine hack, maar de rgba is nodig om de gradient transparant te krijgen. 
+        }
+    }
+    li.active a {
+      
+    }
+}
 
 
 

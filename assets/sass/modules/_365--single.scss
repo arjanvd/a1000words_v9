@@ -1,3 +1,7 @@
+.main {
+  @include container;
+}
+
 .horizontal .content {
   @include span(6 of 12);
 }
