@@ -41,8 +41,9 @@ h2, .h2 {
 
 // H3
 h3, .h3 {
-  @include set-type(8,$ms-up3);
-  @extend %font-serif-bold;
+  @include set-type(4,$ms-up1);
+  @extend %font-serif-light;
+  color: $blue;
 }
 
 
