@@ -24,8 +24,21 @@
 --------------------------------------------------------  */
 
 p {
-  margin-bottom: 1em;
-  line-height: 1.25*$unit;
+  margin-bottom: vr($base-line-multi);
+  -webkit-hyphens: auto;
+  -epub-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+}
+
+@if $paragraph-indent {
+  p + p {
+    margin-top: vr($base-line-multi * -1);
+    text-indent: vr($base-line-multi);
+  }
 }
 
 

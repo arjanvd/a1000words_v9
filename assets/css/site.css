@@ -28,17 +28,12 @@
   is basically Normalize, some mixins, and a print stylesheet.
 
 -----------------------------------------------------  */
-.menu a {
+.navlink {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal; }
 
-h3, .h3 {
-  font-family: "Aleo", Georgia, "Times New Roman", serif;
-  font-weight: 300;
-  font-style: normal; }
-
-h1, .h1 {
+h1, .h1, h3, .h3 {
   font-family: "Aleo", Georgia, "Times New Roman", serif;
   font-weight: 700;
   font-style: normal; }
@@ -137,11 +132,8 @@ html {
 
 */
 html {
-  font-size: 87.5%;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  @media (min-width: 600px) {
-    html {
-      font-size: 100%; } }
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 100%; }
   @media (min-width: 996px) {
     html {
       font-size: 112.5%; } }
@@ -162,6 +154,7 @@ html {
 
 ------------------------------------------------------ */
 body {
+  line-height: 1.5em;
   padding: 0 1%; }
   @media (min-width: 1440px) {
     body {
@@ -228,6 +221,88 @@ h6, .h6 {
     text-transform: none;
     font-size: 0.5627813555em;
     line-height: 0; }
+
+/**
+
+  @text
+--------------------------------------------------------
+  elements/_text.scss
+--------------------------------------------------------
+
+  Some basic styles to paragraphs and
+  inline styles
+
+-----------------------------------------------------  */
+/* @paragraphs
+--------------------------------------------------------
+
+  Example: Paragraphs
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+--------------------------------------------------------  */
+p {
+  margin-bottom: 1.5em;
+  -webkit-hyphens: auto;
+  -epub-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word; }
+
+p + p {
+  margin-top: -1.5em;
+  text-indent: 1.5em; }
+
+/* @inline
+--------------------------------------------------------
+
+  Common inline elements
+
+  Example: inline elements
+  <p>Lorem Ipsum is <b>bold</b> text of the <strong>strong</strong> printing and typesetting industry. Lorem Ipsum is <i>italic</i> simply dummy text <em>emphasized</em> of the printing and typesetting industry.</p<
+
+-------------------------------------------------------- */
+b,
+strong {
+  font-weight: bold; }
+
+i,
+em {
+  font-style: italic; }
+
+/**
+
+  @links
+--------------------------------------------------------
+  elements/_links.scss
+--------------------------------------------------------
+
+  Links, <a> etc. & Webkit tap highlight
+
+  Example: link
+  <p>Lorem Ipsum is simply <a href="#">dummy text</a> of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+-------------------------------------------------------- */
+/* @anchors
+--------------------------------------------------------
+
+  Anchors will have this base styling
+
+------------------------------------------------------ */
+a {
+  color: inherit;
+  text-decoration: none; }
+
+/* @webkit-tap-highlight
+--------------------------------------------------------
+
+  Declare the webkit tap highlight style
+
+------------------------------------------------------ */
+body {
+  -webkit-tap-highlight-color: rba(0, 0, 0, 0.35); }
 
 /**
 
@@ -336,6 +411,59 @@ img {
 .img--circle {
   border-radius: 50%; }
 
+/**
+
+  @icons
+---------------------------------------------------------
+  elements/_icons.scss
+--------------------------------------------------------
+
+  Your icon set may vary. In this partial, you may wish
+  to load in a font icon set and add all the associated
+  css that goes with it. This would be the case if you
+  were using something like Symbolset or IcoMoon for
+  example.
+
+--------------------------------------------------------- */
+/* @icon
+--------------------------------------------------------
+
+  This is a basic icon element. We set some basic
+  structural styles and display styles to get the ball
+  rolling.
+
+  Example: Open Icon
+  <i class="icon icon--open">&plus;</i>
+
+  Example: Close Icon
+  <i class="icon icon--close">&times;</i>
+
+------------------------------------------------------ */
+[class^="icon--"], [class*=" icon--"] {
+  display: inline-block;
+  fill: currentColor; }
+
+.sm-icons li {
+  display: inline; }
+  .sm-icons li a {
+    display: inline-block; }
+
+.icon--facebook {
+  width: 1.5em;
+  height: 1.5em; }
+.icon--google {
+  width: 1.5em;
+  height: 1.5em; }
+.icon--twitter {
+  width: 1.5em;
+  height: 1.5em; }
+.icon--whatsapp {
+  width: 1.5em;
+  height: 1.5em; }
+.icon--pinterest {
+  width: 1.16694em;
+  height: 1.5em; }
+
   /***
 
   @layout
@@ -440,6 +568,7 @@ img {
 
 ------------------------------------------------------ */
 header {
+  padding: 0.75em 0;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto; }
@@ -453,32 +582,58 @@ header {
     width: 23.7288135593%;
     float: left;
     margin-right: 1.6949152542%; } }
+.logo--atw {
+  display: inline-block;
+  color: #555555;
+  fill: currentColor;
+  height: 3em; }
 
-nav {
-  display: inline-block; }
-  @media (min-width: 600px) {
-    nav {
-      width: 74.5762711864%;
-      float: right;
-      margin-right: 0; } }
+@media (min-width: 600px) {
+  nav {
+    width: 74.5762711864%;
+    float: right;
+    margin-right: 0; } }
 
 .menu {
-  text-align: center;
-  width: 100%; }
+  text-align: center; }
+  @media (min-width: 600px) {
+    .menu {
+      text-align: left; } }
   .menu li {
     display: inline;
     text-transform: uppercase; }
   .menu a {
-    display: inline-block;
-    padding: 0.8439609902em 0 0.2813203301em;
-    transition: all 0.3s ease;
-    color: #fff;
-    padding-left: 1em;
-    padding-right: 1em;
-    font-size: 1.333em;
-    line-height: 2.2505626407; }
-    .menu a:hover {
-      background-image: linear-gradient(to bottom, #fff 5px, rgba(255, 255, 255, 0) 5px); }
+    display: inline-block; }
+
+.navlink {
+  padding: 1.125em 0 0.375em;
+  color: #a2a2a2;
+  transition: all 0.3s ease;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 1em;
+  line-height: 3; }
+
+.navlink--365:hover {
+  color: #3B90FF; }
+
+.navlink--blog:hover {
+  color: #FFC145; }
+
+.navlink--training:hover {
+  color: #B8F000; }
+
+.navlink--code:hover {
+  color: #a11b6d; }
+
+.active .navlink--365 {
+  color: #3B90FF; }
+.active .navlink--blog {
+  color: #FFC145; }
+.active .navlink--training {
+  color: #B8F000; }
+.active .navlink--code {
+  color: #a11b6d; }
 
 /*
 

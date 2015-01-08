@@ -4,5 +4,15 @@ $black: #222;
 $green: #B8F000;
 $blue: #3B90FF;
 $orange: #FFC145;
-$purple: #5F0F40;
+$purple: #a11b6d;
 
+
+$grey90: lighten($black, 10%);
+$grey80: lighten($black, 20%);
+$grey70: lighten($black, 30%);
+$grey60: lighten($black, 40%);
+$grey50: lighten($black, 50%);
+$grey40: lighten($black, 60%);
+$grey30: lighten($black, 70%);
+$grey20: lighten($black, 80%);
+$grey10: lighten($black, 90%);

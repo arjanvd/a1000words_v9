@@ -42,7 +42,7 @@ h2, .h2 {
 // H3
 h3, .h3 {
   @include set-type(4,$ms-up1);
-  @extend %font-serif-light;
+  @extend %font-serif-bold;
   color: $blue;
 }
 

@@ -27,6 +27,7 @@
 
 ------------------------------------------------------ */
 header {
+  padding: vr(2) 0;
   @include container;
 }
 
@@ -34,38 +35,55 @@ header {
   @include bp(small) {
     @include span(3 of 12);
   }
+  &--atw {
+    display: inline-block;
+    color: $grey80;
+    fill: currentColor;
+    height: 3em;
+  }
 }
 
 nav {
-  display: inline-block;
   @include bp(small) {
-    @include span(9 at 4 of 12 last);
+    @include span(9 at 4 of 12);
   }
 }
 
 .menu {
   text-align: center;
-  width: 100%;
+  @include bp(small) {
+    text-align: left;
+  }
     li {
       display: inline;
       text-transform: uppercase;
     }
     a {
       display: inline-block;
-      padding: vr(3, $ms-up1) 0 vr(1, $ms-up1);
-      transition: all 0.3s ease;
-      color: $white;
-      @include pad(1em);
-      @include set-type(8, $ms-up1);
-      @extend %font-sans-normal;
-        &:hover {
-          background-image: linear-gradient(to bottom, $white 5px, rgba(255,255,255,0) 5px); // een kleine hack, maar de rgba is nodig om de gradient transparant te krijgen. 
-        }
-    }
-    li.active a {
-      
     }
 }
+
+.navlink {
+  padding: vr(3, $ms-base) 0 vr(1, $ms-base);
+  color: $grey50;
+  transition: all 0.3s ease;
+  @include pad(1em);
+  @include set-type(8, $ms-base);
+  @extend %font-sans-bold;
+}
+
+.navlink--365:hover { color: $blue; }
+.navlink--blog:hover { color: $orange; }
+.navlink--training:hover { color: $green; }
+.navlink--code:hover { color: $purple; }
+
+.active .navlink {
+  &--365 { color: $blue; }
+  &--blog { color: $orange; }
+  &--training { color: $green; }
+  &--code { color: $purple; }
+}
+
 
 
 
