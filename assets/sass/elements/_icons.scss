@@ -38,17 +38,18 @@
 	fill: currentColor;
 }
 
-.sm-icons li {
-  display: inline;
-  a { display: inline-block;
-  }
-}
-
-
 .icon {
   &--facebook { width: vr(4, $ms-base); height: vr(4, $ms-base); }
   &--google { width: vr(4, $ms-base); height: vr(4, $ms-base); }
   &--twitter { width: vr(4, $ms-base); height: vr(4, $ms-base); }
   &--whatsapp { width: vr(4, $ms-base); height: vr(4, $ms-base); }
   &--pinterest { width: (vr(4, $ms-base) * 0.77796); height: vr(4, $ms-base); }
+}
+
+.sm-icons li {
+  display: inline;
+}
+
+.icon {
+  &--location { width: vr(4, $ms-base); height: vr(4, $ms-base); padding-right: 0.5em; }
 }

@@ -443,11 +443,6 @@ img {
   display: inline-block;
   fill: currentColor; }
 
-.sm-icons li {
-  display: inline; }
-  .sm-icons li a {
-    display: inline-block; }
-
 .icon--facebook {
   width: 1.5em;
   height: 1.5em; }
@@ -463,6 +458,14 @@ img {
 .icon--pinterest {
   width: 1.16694em;
   height: 1.5em; }
+
+.sm-icons li {
+  display: inline; }
+
+.icon--location {
+  width: 1.5em;
+  height: 1.5em;
+  padding-right: 0.5em; }
 
   /***
 

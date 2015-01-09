@@ -1,6 +1,6 @@
 <svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   
-  <symbol id="atw" viewBox="0 0 223.5 99" preserveAspectRatio="xMinYMid meet">
+  <symbol id="atw" viewBox="0 0 223.5 99" preserveAspectRatio="xMinYMax meet">
     <title>athousandwords.nl</title> 
     <desc>logo of athousandwords.nl</desc>
     <g>
@@ -78,7 +78,7 @@
     </g>
   </symbol>
 
-  <symbol id="icon-twitter" viewBox="0 0 100 100" preserveAspectRatio="xMinYMid meet">
+  <symbol id="icon-twitter" viewBox="0 0 100 100" preserveAspectRatio="xMinYMax meet">
     <title>twitter</title>
     <desc>twitter icon</desc>
     <g>
@@ -93,7 +93,7 @@
     </g>
   </symbol>
 
-  <symbol id="icon-whatsapp" viewBox="0 0 100 100" preserveAspectRatio="xMinYMid meet">
+  <symbol id="icon-whatsapp" viewBox="0 0 100 100" preserveAspectRatio="xMinYMax meet">
     <title>whatsapp</title>
     <desc>whatsapp icon</desc>
     <g>
@@ -111,5 +111,13 @@
 	C73.398,61.944,73.398,59.792,73.129,59.344z"/>
     </g>
   </symbol>
-            
+  
+  <symbol id="icon-location" viewBox="0 0 512 512" preserveAspectRatio="xMinYMid meet">
+    <title>Location marker</title>
+    <desc>marker icon</desc>
+    <g>
+      <path d="M256,0C149.969,0,64,85.969,64,192s160,320,192,320s192-213.969,192-320S362.031,0,256,0z M256,320
+	c-70.594,0-128-57.438-128-128S185.406,64,256,64s128,57.438,128,128S326.594,320,256,320z"/>
+    </g>
+  </symbol>                    
 </svg>
