@@ -36,10 +36,16 @@ header {
     @include span(3 of 12);
   }
   &--atw {
-    display: inline-block;
-    color: $grey80;
+    margin: 0 auto;
+    //width: ; // deze nog invullen in juiste verhouding met de hoogte
+    height: 2em;
+    color: $grey20;
     fill: currentColor;
-    height: 3em;
+
+    @include bp(small) {
+      display: inline-block;
+      height: 3em;
+    }
   }
 }
 
@@ -64,12 +70,15 @@ nav {
 }
 
 .navlink {
-  padding: vr(3, $ms-base) 0 vr(1, $ms-base);
-  color: $grey50;
-  transition: all 0.3s ease;
-  @include pad(1em);
-  @include set-type(8, $ms-base);
-  @extend %font-sans-bold;
+    color: $grey40;
+    transition: all 0.3s ease;
+    @include pad(0.5em);
+    @include set-type(8, $ms-base);
+    @extend %font-sans-bold;
+  
+  @include bp(small){
+    padding: vr(3) 1em vr(1);
+  }
 }
 
 .navlink--365:hover { color: $blue; }

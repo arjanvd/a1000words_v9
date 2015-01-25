@@ -36,14 +36,14 @@
 [class^="icon--"], [class*=" icon--"] {
 	display: inline-block;
 	fill: currentColor;
+  vertical-align: middle;
 }
 
 .icon {
-  &--facebook { width: vr(4, $ms-base); height: vr(4, $ms-base); }
-  &--google { width: vr(4, $ms-base); height: vr(4, $ms-base); }
-  &--twitter { width: vr(4, $ms-base); height: vr(4, $ms-base); }
-  &--whatsapp { width: vr(4, $ms-base); height: vr(4, $ms-base); }
-  &--pinterest { width: (vr(4, $ms-base) * 0.77796); height: vr(4, $ms-base); }
+  &--facebook { width: vr(4, $ms-base); height: vr(4, $ms-base); padding-right: 0.5em; }
+  &--google { width: vr(3, $ms-base); height: vr(3, $ms-base); }
+  &--twitter { width: vr(3, $ms-base); height: vr(3, $ms-base); }
+  &--pinterest { width: vr(3, $ms-base); height: vr(3, $ms-base); }
 }
 
 .sm-icons li {
@@ -51,5 +51,5 @@
 }
 
 .icon {
-  &--location { width: vr(4, $ms-base); height: vr(4, $ms-base); padding-right: 0.5em; }
+  &--location { width: vr(4); height: vr(4); }
 }

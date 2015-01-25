@@ -22,11 +22,14 @@ html {
 
 
 html {
-    font-family: $font-sans;
-    font-size: ($base-font-size / 16px) * 100%; // 16px
+  font-family: $font-sans;
+  font-size: ($base-font-size / 16px) * 100%; // 16px
+  color: $grey20;
+  
     @include bp(large) {
         font-size: ($base-font-size / 16px) * 112.5%; // 18px
     }
+  
     @include bp(x-large) {
         font-size: ($base-font-size / 16px) * 125%; // 20px
     }

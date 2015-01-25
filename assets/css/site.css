@@ -133,7 +133,8 @@ html {
 */
 html {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%; }
+  font-size: 100%;
+  color: #eeeeee; }
   @media (min-width: 996px) {
     html {
       font-size: 112.5%; } }
@@ -441,31 +442,29 @@ img {
 ------------------------------------------------------ */
 [class^="icon--"], [class*=" icon--"] {
   display: inline-block;
-  fill: currentColor; }
+  fill: currentColor;
+  vertical-align: middle; }
 
 .icon--facebook {
   width: 1.5em;
-  height: 1.5em; }
+  height: 1.5em;
+  padding-right: 0.5em; }
 .icon--google {
-  width: 1.5em;
-  height: 1.5em; }
+  width: 1.125em;
+  height: 1.125em; }
 .icon--twitter {
-  width: 1.5em;
-  height: 1.5em; }
-.icon--whatsapp {
-  width: 1.5em;
-  height: 1.5em; }
+  width: 1.125em;
+  height: 1.125em; }
 .icon--pinterest {
-  width: 1.16694em;
-  height: 1.5em; }
+  width: 1.125em;
+  height: 1.125em; }
 
 .sm-icons li {
   display: inline; }
 
 .icon--location {
   width: 1.5em;
-  height: 1.5em;
-  padding-right: 0.5em; }
+  height: 1.5em; }
 
   /***
 
@@ -586,10 +585,14 @@ header {
     float: left;
     margin-right: 1.6949152542%; } }
 .logo--atw {
-  display: inline-block;
-  color: #555555;
-  fill: currentColor;
-  height: 3em; }
+  margin: 0 auto;
+  height: 2em;
+  color: #eeeeee;
+  fill: currentColor; }
+  @media (min-width: 600px) {
+    .logo--atw {
+      display: inline-block;
+      height: 3em; } }
 
 @media (min-width: 600px) {
   nav {
@@ -609,13 +612,15 @@ header {
     display: inline-block; }
 
 .navlink {
-  padding: 1.125em 0 0.375em;
-  color: #a2a2a2;
+  color: #bbbbbb;
   transition: all 0.3s ease;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   font-size: 1em;
   line-height: 3; }
+  @media (min-width: 600px) {
+    .navlink {
+      padding: 1.125em 1em 0.375em; } }
 
 .navlink--365:hover {
   color: #3B90FF; }
