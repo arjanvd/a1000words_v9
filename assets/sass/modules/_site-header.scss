@@ -38,13 +38,13 @@ header {
   &--atw {
     margin: 0 auto;
     //width: ; // deze nog invullen in juiste verhouding met de hoogte
-    height: 2em;
+    height: 2rem;
     color: $grey20;
     fill: currentColor;
 
     @include bp(small) {
       display: inline-block;
-      height: 3em;
+      height: 3rem;
     }
   }
 }
@@ -72,12 +72,13 @@ nav {
 .navlink {
     color: $grey40;
     transition: all 0.3s ease;
-    @include pad(0.5em);
-    @include set-type(8, $ms-base);
+    @include pad(0.5rem);
+    @include set-type($ms-base);
     @extend %font-sans-bold;
   
   @include bp(small){
-    padding: vr(3) 1em vr(1);
+    @include set-type($ms-base, 48);
+    padding: vr(3) 1rem vr(1);
   }
 }
 

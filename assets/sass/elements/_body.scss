@@ -13,7 +13,7 @@
 
 
 body {
-  line-height: vr($base-line-multi);
+  line-height: $base-line-height;
   padding: 0 1%;
   @include bp(xx-large) {
     padding: 0;

@@ -40,16 +40,17 @@
 }
 
 .icon {
-  &--facebook { width: vr(4, $ms-base); height: vr(4, $ms-base); padding-right: 0.5em; }
-  &--google { width: vr(3, $ms-base); height: vr(3, $ms-base); }
-  &--twitter { width: vr(3, $ms-base); height: vr(3, $ms-base); }
-  &--pinterest { width: vr(3, $ms-base); height: vr(3, $ms-base); }
+  &--facebook { width: vr(3); height: vr(3); }
+  &--google { width: vr(3); height: vr(3); }
+  &--twitter { width: vr(4); height: vr(4); }
+  &--pinterest { width: vr(4); height: vr(4); }
 }
 
 .sm-icons li {
   display: inline;
+  margin-right: 0.25rem;
 }
 
 .icon {
-  &--location { width: vr(4); height: vr(4); }
+  &--location { width: vr(3); height: vr(3); }
 }
