@@ -53,4 +53,6 @@
 
 .icon {
   &--location { width: vr(3); height: vr(3); }
+  &--arrow-right { width: vr(4); height: vr(4); }
+  &--arrow-left { width: vr(4); height: vr(4); transform: rotate(180); }
 }

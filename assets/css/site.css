@@ -465,6 +465,13 @@ img {
 .icon--location {
   width: 1.125rem;
   height: 1.125rem; }
+.icon--arrow-right {
+  width: 1.5rem;
+  height: 1.5rem; }
+.icon--arrow-left {
+  width: 1.5rem;
+  height: 1.5rem;
+  transform: rotate(180); }
 
   /***
 
@@ -653,6 +660,34 @@ header {
   The main site navigation.
 
 -----------------------------------------------------  */
+.navigation {
+  padding: 0.375rem 0 1.125rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  .navigation:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+.prev {
+  text-align: left;
+  padding-left: 2rem;
+  width: 49.1525423729%;
+  float: left;
+  margin-right: 1.6949152542%; }
+
+.next {
+  text-align: right;
+  width: 49.1525423729%;
+  float: right;
+  margin-right: 0; }
+
+.nav-button {
+  background-color: #222;
+  border-bottom: 1px solid #3c3c3c;
+  padding: 0.375rem 0; }
+
 /* --------------------------------------------------------------
 
  Hartija Css Print  Framework
