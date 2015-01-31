@@ -1,21 +1,28 @@
 .navigation {
-  padding: vr(1) 0 vr(3);
+  padding: vr(1) 0 vr(3); 
   @include container;
 }
 
 .prev {
-  text-align: left;
-  padding-left: 2rem;
-  @include span(6 of 12);
+  @include span(isolate 1 at 6 of 12);
 }
 
 .next {
-  text-align: right;
-  @include span(6 at 7 of 12);
+  @include span(isolate 1 at 7 of 12);
 }
 
 .nav-button {
-  background-color: $black;
-  border-bottom: 1px solid $grey90;
-  padding: vr(1) 0;
+  background-image: linear-gradient($grey90, $black);
+  border-width: 1px;
+  border-color: $black;
+  border-style: solid;
+  border-radius: 4px;
+  text-align: center;
+  transition: all ease 0.2s;
+  @include vr-border(1px, 1px, 1); // deze mixin moet nog beter -> zie originele typesettings
+    &:hover {
+      color: $grey40;
+      background: $black;
+      border: 1px solid $grey90;
+    }
 }

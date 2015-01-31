@@ -32,27 +32,30 @@
 
 ------------------------------------------------------ */
 
-
-[class^="icon--"], [class*=" icon--"] {
-	display: inline-block;
-	fill: currentColor;
-  vertical-align: middle;
-}
-
 .icon {
-  &--facebook { width: vr(3); height: vr(3); }
-  &--google { width: vr(3); height: vr(3); }
-  &--twitter { width: vr(4); height: vr(4); }
-  &--pinterest { width: vr(4); height: vr(4); }
+  display: inline-block;
+  fill: currentColor; 
+ 
+  &--sm {
+    width: vr(3);
+    height: vr(3);
+    vertical-align: middle;
+    fill: $blue70;
+ }
+  
+  &--info, &--meta {
+    width: vr(2); 
+    height: vr(2);
+    margin-right: 0.5rem;
+  }
+  
+  &--facebook {
+    transition: all 0.3s ease;
+      &:hover { fill: $color-facebook; }
+  }
+  
+  &--arrow-right { width: vr(2); height: vr(2); }
+  &--arrow-left { width: vr(2); height: vr(2); }
 }
 
-.sm-icons li {
-  display: inline;
-  margin-right: 0.25rem;
-}
 
-.icon {
-  &--location { width: vr(3); height: vr(3); }
-  &--arrow-right { width: vr(4); height: vr(4); }
-  &--arrow-left { width: vr(4); height: vr(4); transform: rotate(180); }
-}

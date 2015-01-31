@@ -71,6 +71,7 @@ $ms-up2:   $ms-up1 * ms-ratio(ms3-4); // [5]
 $ms-up3:   $ms-up2 * ms-ratio(ms3-4); // [6]
 $ms-up4:   $ms-up3 * ms-ratio(ms3-4); // [7]
 $ms-up5:   $ms-up4 * ms-ratio(ms3-4); // [8]
+$ms-up6:   $ms-up5 * ms-ratio(ms3-4); // [8]
 
 // When you need more than one set of modular scale values, create more variables
 
@@ -145,6 +146,15 @@ $m-ms-up5:   $ms-up4 * ms-ratio(ms8-9); // [8] 29px
 @mixin vr-border-bottom($border-width: 1px, $lines: $base-line-multi) {
   border-bottom-width: $border-width;
   padding-bottom: (($lines * $base-vertical-unit) - (strip-units($border-width) / $base-font-size)) / $base-font-size + 0rem;
+}
+
+// Creates a pixel width border bottom with padding that is a multiple of the base
+// vertical grid unit. You will need to set border style and color rules.
+@mixin vr-border($border-top-width: 1px, $border-bottom-width: $border-top-width, $lines-top: $base-line-multi / 2, $lines-bottom: $lines-top) {
+  border-top-width: $border-top-width;
+  border-bottom-width: $border-bottom-width;
+  padding-top: (($lines-top * $base-vertical-unit) - (strip-units($border-top-width) / $base-font-size)) / $base-font-size + 0rem;
+  padding-bottom: (($lines-bottom * $base-vertical-unit) - (strip-units($border-bottom-width) / $base-font-size)) / $base-font-size + 0rem;
 }
 
 // Creates base type baseline overlay and vertical unit overlay.

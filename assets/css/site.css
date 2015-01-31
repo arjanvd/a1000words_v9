@@ -28,12 +28,12 @@
   is basically Normalize, some mixins, and a print stylesheet.
 
 -----------------------------------------------------  */
-.navlink {
+.number, .navlink {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-style: normal; }
 
-h1, .h1, h3, .h3 {
+h1, .h1, h2, .h2, h3, .h3 {
   font-family: "Aleo", Georgia, "Times New Roman", serif;
   font-weight: 700;
   font-style: normal; }
@@ -194,7 +194,10 @@ h1, .h1 {
   line-height: 1.0095540975; }
 
 h2, .h2 {
-  margin-bottom: 1em; }
+  margin-bottom: 1.5rem;
+  color: #3B90FF;
+  font-size: 1.776889rem;
+  line-height: 1.0024542895; }
 
 h3, .h3 {
   font-size: 1.333rem;
@@ -440,38 +443,28 @@ img {
   <i class="icon icon--close">&times;</i>
 
 ------------------------------------------------------ */
-[class^="icon--"], [class*=" icon--"] {
+.icon {
   display: inline-block;
-  fill: currentColor;
-  vertical-align: middle; }
-
-.icon--facebook {
-  width: 1.125rem;
-  height: 1.125rem; }
-.icon--google {
-  width: 1.125rem;
-  height: 1.125rem; }
-.icon--twitter {
-  width: 1.5rem;
-  height: 1.5rem; }
-.icon--pinterest {
-  width: 1.5rem;
-  height: 1.5rem; }
-
-.sm-icons li {
-  display: inline;
-  margin-right: 0.25rem; }
-
-.icon--location {
-  width: 1.125rem;
-  height: 1.125rem; }
-.icon--arrow-right {
-  width: 1.5rem;
-  height: 1.5rem; }
-.icon--arrow-left {
-  width: 1.5rem;
-  height: 1.5rem;
-  transform: rotate(180); }
+  fill: currentColor; }
+  .icon--sm {
+    width: 1.125rem;
+    height: 1.125rem;
+    vertical-align: middle;
+    fill: #d4e7ff; }
+  .icon--info, .icon--meta {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-right: 0.5rem; }
+  .icon--facebook {
+    transition: all 0.3s ease; }
+    .icon--facebook:hover {
+      fill: #3b5998; }
+  .icon--arrow-right {
+    width: 0.75rem;
+    height: 0.75rem; }
+  .icon--arrow-left {
+    width: 0.75rem;
+    height: 0.75rem; }
 
   /***
 
@@ -529,30 +522,114 @@ img {
     display: block;
     clear: both; }
 
-.horizontal .content {
-  width: 49.1525423729%;
-  float: left;
-  margin-right: 1.6949152542%; }
-
-.horizontal .art-info {
-  width: 23.7288135593%;
-  float: left;
-  margin-right: 1.6949152542%; }
-
-.horizontal .art-metadata {
-  width: 23.7288135593%;
-  float: right;
-  margin-right: 0; }
+.horizontal {
+  /*    */
+  /*  .art-metadata {
+      @include bp(small) {
+        @include span(6 at 7 of 12 last);
+      }
+      @include bp(medium) {
+        @include span(3 at 7 of 12);
+      }
+    }*/ }
+  .horizontal .art-image {
+    margin-bottom: 1.5rem; }
+  .horizontal .art-metadata {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; }
+    .horizontal .art-metadata:after {
+      content: " ";
+      display: block;
+      clear: both; }
+    @media (min-width: 600px) {
+      .horizontal .art-metadata {
+        width: 23.7288135593%;
+        float: left;
+        margin-right: 1.6949152542%; } }
+    @media (min-width: 756px) {
+      .horizontal .art-metadata {
+        width: 23.7288135593%;
+        float: left;
+        margin-right: 1.6949152542%; } }
+    @media (min-width: 996px) {
+      .horizontal .art-metadata {
+        width: 23.7288135593%;
+        float: left;
+        margin-right: 1.6949152542%; } }
+    .horizontal .art-metadata .number {
+      margin-bottom: 1.5rem;
+      width: 49.1525423729%;
+      float: left;
+      margin-right: 1.6949152542%; }
+      @media (min-width: 600px) {
+        .horizontal .art-metadata .number {
+          width: 100%;
+          float: left;
+          margin-left: 0;
+          margin-right: 0; } }
+    .horizontal .art-metadata .daytime {
+      margin-bottom: 1.5rem;
+      width: 49.1525423729%;
+      float: right;
+      margin-right: 0; }
+      @media (min-width: 600px) {
+        .horizontal .art-metadata .daytime {
+          width: 100%;
+          float: left;
+          margin-left: 0;
+          margin-right: 0; } }
+  @media (min-width: 600px) {
+    .horizontal .art {
+      width: 66.1016949153%;
+      float: right;
+      margin-right: 0; } }
+  @media (min-width: 756px) {
+    .horizontal .art {
+      width: 66.1016949153%;
+      float: right;
+      margin-right: 0; } }
+  @media (min-width: 996px) {
+    .horizontal .art {
+      width: 74.5762711864%;
+      float: right;
+      margin-right: 0; } }
+  @media (min-width: 600px) {
+    .horizontal .content {
+      width: 49.1525423729%;
+      float: left;
+      margin-right: 1.6949152542%; } }
+  @media (min-width: 600px) {
+    .horizontal .art-info {
+      width: 49.1525423729%;
+      float: right;
+      margin-right: 0; } }
+  @media (min-width: 756px) {
+    .horizontal .art-info {
+      width: 23.7288135593%;
+      float: right;
+      margin-right: 0; } }
 
 .vertical .art-image {
   width: 49.1525423729%;
   float: left;
   margin-right: 1.6949152542%; }
-
 .vertical .art {
   width: 49.1525423729%;
   float: right;
   margin-right: 0; }
+
+.sm-icons {
+  margin-bottom: 1.5rem; }
+  .sm-icons li {
+    display: inline;
+    margin-right: 0.25rem; }
+
+.number {
+  margin-bottom: 1.5rem;
+  color: #d4e7ff;
+  font-size: 3.1573345183rem;
+  line-height: 1.0095540975; }
 
 /**
 
@@ -577,7 +654,7 @@ img {
 
 ------------------------------------------------------ */
 header {
-  padding: 0.75rem 0;
+  padding: 0.75rem 0 0;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto; }
@@ -671,22 +748,33 @@ header {
     clear: both; }
 
 .prev {
-  text-align: left;
-  padding-left: 2rem;
-  width: 49.1525423729%;
+  width: 6.7796610169%;
   float: left;
-  margin-right: 1.6949152542%; }
+  margin-left: 42.3728813559%;
+  margin-right: -100%; }
 
 .next {
-  text-align: right;
-  width: 49.1525423729%;
-  float: right;
-  margin-right: 0; }
+  width: 6.7796610169%;
+  float: left;
+  margin-left: 50.8474576271%;
+  margin-right: -100%; }
 
 .nav-button {
-  background-color: #222;
-  border-bottom: 1px solid #3c3c3c;
-  padding: 0.375rem 0; }
+  background-image: linear-gradient(#3c3c3c, #222);
+  border-width: 1px;
+  border-color: #222;
+  border-style: solid;
+  border-radius: 4px;
+  text-align: center;
+  transition: all ease 0.2s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  padding-top: 0.37109375rem;
+  padding-bottom: 0.37109375rem; }
+  .nav-button:hover {
+    color: #bbbbbb;
+    background: #222;
+    border: 1px solid #3c3c3c; }
 
 /* --------------------------------------------------------------
 
