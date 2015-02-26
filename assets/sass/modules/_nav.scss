@@ -1,14 +1,20 @@
 .navigation {
-  padding: vr(1) 0 vr(3); 
+  padding: 0 0 vr(4); 
   @include container;
 }
 
 .prev {
-  @include span(isolate 1 at 6 of 12);
+  @include span(isolate 2 at 5 of 12);
+    @include bp(large) {
+      @include span(isolate 1 at 6 of 12);
+    }
 }
 
 .next {
-  @include span(isolate 1 at 7 of 12);
+  @include span(isolate 2 at 7 of 12);
+    @include bp(large) {
+      @include span(isolate 1 at 7 of 12);
+    }
 }
 
 .nav-button {

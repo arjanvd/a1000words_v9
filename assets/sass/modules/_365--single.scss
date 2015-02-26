@@ -2,39 +2,50 @@
   @include container;
 }
 
-.horizontal {
+.art--365__horizontal {
   .art-image {
     margin-bottom: vr(4);
   }
   .art-metadata {
     @include container;
     @include bp(small) {
-      @include span(3 of 12);
+      @include span(4 of 12);
     }
     @include bp(medium) {
       @include span(3 of 12);
     }
-    @include bp(large) {
-      @include span(3 of 12);
-    }
     .number {
-      margin-bottom: vr(4);
-      @include span(6 of 12);
+ //     margin-bottom: vr(4);
+      @include span(5 of 12);
         @include bp(small) {
           @include span(12 of 12);
         }      
     }
     .daytime {
       margin-bottom: vr(4);
-      @include span(6 at 7 of 12 last);
+      @include span(7 at 6 of 12 last);
         @include bp(small) {
           @include span(12 of 12);
         }      
     }
   }
+  .art-content {
+    @include bp(small) {
+      @include span(8 at 5 of 12);
+    }
+    @include bp(medium) {
+      @include span(9 at 4 of 12);
+    }
+  }
+  .content {
+    @include bp(x-large) {
+      @include span(9 of 12);
+    }
+  }
+}
   
   
-/*    */
+/*    
   
 
   .art {
@@ -54,14 +65,14 @@
       @include span(6 of 12);
     }
   }
-/*  .art-metadata {
+  .art-metadata {
     @include bp(small) {
       @include span(6 at 7 of 12 last);
     }
     @include bp(medium) {
       @include span(3 at 7 of 12);
     }
-  }*/
+  }
   .art-info {
     @include bp(small) {
       @include span(6 at 7 of 12 last);
@@ -70,9 +81,9 @@
       @include span(3 at 10 of 12 last);
     }
   }
-}
+}*/
 
-.vertical {
+art--365__vertical {
   .art-image {
     @include span(6 of 12);
   }
@@ -82,7 +93,9 @@
 }
 
 .sm-icons {
-  margin-bottom: vr(4);
+  margin: 0 0 vr(4) 3rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid $grey70;
     li {
       display: inline;
       margin-right: 0.25rem;
@@ -90,8 +103,16 @@
 }
 
 .number {
-      margin-bottom: vr(4);
-      color: $blue70;
-      @include set-type($ms-up4);
-      @extend %font-sans-bold;
+  @extend %font-serif-normal;
+  @include set-type($ms-up5);
+  @include bp(small) {
+    @include set-type($ms-up6);
+  }
+}
+.daytime {
+  color: $grey50;
+  margin-top: vr(2);
+    @include bp(small) {
+      margin-top: vr(4);
     }
+}

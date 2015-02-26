@@ -100,7 +100,7 @@ $m-ms-up5:   $ms-up4 * ms-ratio(ms8-9); // [8] 29px
   @if is-int($lines) == false {
     @warn  #{$lines} + $not-integer-txt;
   }
-  @return ($lines * $base-vertical-unit) / $base-font-size + 0rem;
+  @return $lines * $base-vertical-unit;
 }
 
 
@@ -110,10 +110,10 @@ $m-ms-up5:   $ms-up4 * ms-ratio(ms8-9); // [8] 29px
 // Finally, the tools that you can use throughout your project to set
 // all the wonderful type related stuffs.
 
-@mixin set-type($size, $line-height: $base-line-height) {
-    
-  // generates the font-size in REMs with a PX fallback
-  font-size: 0rem + $size / $base-font-size;
+ @mixin set-type($size, $line-height: $base-line-height) {
+
+  // generates the font-size in REMs
+  font-size: $size;
 
   // line-height functions
   // if a line-height is specified in the mixin
@@ -136,16 +136,17 @@ $m-ms-up5:   $ms-up4 * ms-ratio(ms8-9); // [8] 29px
 
 // Creates a pixel width border top with padding that is a multiple of the base
 // vertical grid unit. You will need to set border style and color rules.
+// Necessity of interpolation of variables: http://stackoverflow.com/questions/17982111/sass-variable-in-css-calc-function
 @mixin vr-border-top($border-width: 1px, $lines: $base-line-multi) {
   border-top-width: $border-width;
-  padding-top: (($lines * $base-vertical-unit) - (strip-units($border-width) / $base-font-size)) / $base-font-size + 0rem;
+  padding-top: calc(#{$lines} * #{$base-vertical-unit} - #{$border-width});
 }
 
 // Creates a pixel width border bottom with padding that is a multiple of the base
 // vertical grid unit. You will need to set border style and color rules.
 @mixin vr-border-bottom($border-width: 1px, $lines: $base-line-multi) {
   border-bottom-width: $border-width;
-  padding-bottom: (($lines * $base-vertical-unit) - (strip-units($border-width) / $base-font-size)) / $base-font-size + 0rem;
+  padding-bottom: calc(#{$lines} * #{$base-vertical-unit} - #{$border-width});
 }
 
 // Creates a pixel width border bottom with padding that is a multiple of the base
@@ -153,8 +154,8 @@ $m-ms-up5:   $ms-up4 * ms-ratio(ms8-9); // [8] 29px
 @mixin vr-border($border-top-width: 1px, $border-bottom-width: $border-top-width, $lines-top: $base-line-multi / 2, $lines-bottom: $lines-top) {
   border-top-width: $border-top-width;
   border-bottom-width: $border-bottom-width;
-  padding-top: (($lines-top * $base-vertical-unit) - (strip-units($border-top-width) / $base-font-size)) / $base-font-size + 0rem;
-  padding-bottom: (($lines-bottom * $base-vertical-unit) - (strip-units($border-bottom-width) / $base-font-size)) / $base-font-size + 0rem;
+  padding-top: calc(#{$lines-top} * #{$base-vertical-unit} - #{$border-top-width});
+  padding-bottom: calc(#{$lines-bottom} * #{$base-vertical-unit} - #{$border-bottom-width});
 }
 
 // Creates base type baseline overlay and vertical unit overlay.

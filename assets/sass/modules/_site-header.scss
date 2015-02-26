@@ -27,75 +27,94 @@
 
 ------------------------------------------------------ */
 header {
-  padding: vr(2) 0 0;
+  padding: vr(2) 0;
   @include container;
+}
+
+.training {
+  .header__bg {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.4) 100%
+    ), 
+    url(img/pordoi.jpg) 50% 50% no-repeat; // http://solobike.com.au/wp-content/uploads/2013/02/4_Maratona-dles-Dolomites_by-Freddy-Planinschek-e1362441742551.jpg
+    background-size: cover;
+  }
+  header {
+    position: relative;
+    height: 80vh;    
+    width: 104%;
+    margin-left: -2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    @include container;
+      .meta-training-data {
+        position: absolute;
+        bottom: 1.5rem;
+      }
+  }
 }
 
 .logo {
   @include bp(small) {
+    @include span(4 of 12);
+  }
+  @include bp(medium) {
     @include span(3 of 12);
   }
   &--atw {
-    margin: 0 auto;
-    //width: ; // deze nog invullen in juiste verhouding met de hoogte
+    display: block;
+    margin: 0 0 vr(3);
+    width: 6.59459rem; 
     height: 2rem;
-    color: $grey20;
-    fill: currentColor;
 
     @include bp(small) {
       display: inline-block;
       height: 3rem;
+      width: 9.89189rem;
+      margin: 0;
     }
   }
 }
 
 nav {
   @include bp(small) {
+    @include span(8 at 5 of 12);
+  }
+  @include bp(medium) {
     @include span(9 at 4 of 12);
   }
 }
 
 .menu {
-  text-align: center;
+  text-align: left;
+  margin-left: -1rem;
   @include bp(small) {
-    text-align: left;
+    padding-bottom: vr(1);
   }
-    li {
-      display: inline;
-      text-transform: uppercase;
-    }
-    a {
-      display: inline-block;
-    }
+
+  li {
+    display: inline;
+    text-transform: uppercase;
+  }
+  a {
+    display: inline-block;
+  }
 }
 
 .navlink {
-    color: $grey40;
+    padding: 0 1rem;
     transition: all 0.3s ease;
-    @include pad(0.5rem);
     @include set-type($ms-base);
-    @extend %font-sans-bold;
+    @extend %font-sans-light;
   
   @include bp(small){
-    @include set-type($ms-base, 48);
-    padding: vr(3) 1rem vr(1);
+    @include set-type($ms-base, 3rem);
+    padding: vr(3) 1rem 0;
   }
 }
-
-.navlink--365:hover { color: $blue; }
-.navlink--blog:hover { color: $orange; }
-.navlink--training:hover { color: $green; }
-.navlink--code:hover { color: $purple; }
-
-.active .navlink {
-  &--365 { color: $blue; }
-  &--blog { color: $orange; }
-  &--training { color: $green; }
-  &--code { color: $purple; }
-}
-
-
-
 
 /*
 

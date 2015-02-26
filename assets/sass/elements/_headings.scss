@@ -36,10 +36,9 @@ h1, .h1 {
 h2, .h2 {
   margin-bottom: vr(4);
   color: $blue;
-  @include set-type($ms-up2);
-  @extend %font-serif-bold;
+  @include set-type($ms-up3);
+  @extend %font-sans-normal;
 }
-
 
 
 // H3

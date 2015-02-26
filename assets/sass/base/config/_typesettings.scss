@@ -45,17 +45,14 @@ $text-color: #222 !default;
 // of this value. This is the value that determines the baseline for our vertical
 // rhythm. The default value of 6px allows more fine tuned designs that still
 // obey vertical rhythm.
-$base-vertical-unit: 6 !default; // in pixels
+$base-font-size: 1rem; 
 
-// The value that multiplies the $base-vertical-unit to get the $base-line-height.
-// This gives type an ideal line-height.
+$base-line-height: 1.5;
+
 $base-line-multi: 4 !default;
 
-// Base font size in pixels.
-$base-font-size: 16 !default; // in pixels
+$base-vertical-unit: $base-line-height / $base-line-multi + 0rem; // in rem's
 
-// this is the default line-height you want for the project
-$base-line-height: $base-vertical-unit * $base-line-multi; // defaults to 24
 
 
 // [1] Paragraph setting that you can turn on or off the indent of the first line

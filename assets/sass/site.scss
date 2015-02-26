@@ -37,6 +37,7 @@
 
   // Vars
 
+  @import "base/vars/fonts";
   @import "base/vars/colours";
   @import "base/vars/breakpoints";
   @import "base/vars/susy--settings";
@@ -45,6 +46,8 @@
   // Mixins
 
   @import "base/mixins/clearfix";
+  @import "base/mixins/heart-shape";
+  @import "base/mixins/fancy-link";
   @import "base/mixins/snap-to-baseline";
 
   // Fonts
@@ -120,6 +123,7 @@
 ---------------------------------------------------------  */
 
   @import "layout/wrapper";
+  @import "layout/pages__colours";
 
 
 
@@ -145,6 +149,7 @@
 //  @import "modules/site";
 
   @import "modules/365--single";
+  @import "modules/training--single";
 
   @import "modules/site-header";
 //

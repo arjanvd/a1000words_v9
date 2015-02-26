@@ -1,0 +1,46 @@
+$color-from: $grey50;
+$color-to: $color-google;
+
+@mixin icon-heart($height: 1.5rem) {
+  $width: ($height * 1.111111);
+  $width-half: ($width / 2);
+  
+  display: inline-block;
+  position: relative;
+  width: $width; // 100px;
+  height: $height; //90px;
+
+&::before,
+&::after {
+  position: absolute;
+  content: "";
+  left: $width-half; //50px;
+  top: 4px;
+  width: $width-half; //50px;
+  height: ($height * 0.88888889); //80px;
+  background: $color-from;
+  border-radius: $width-half $width-half 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+&::after {
+   left: 0;
+   transform: rotate(45deg);
+   transform-origin: 100% 100%;
+}
+}
+
+@keyframes beat {
+   0% { 
+     background: $color-from;
+   }
+  50% {
+    background: $color-to;
+  }
+  75% {
+    background: lighten($color-to, 30%);
+  }
+  100% {
+        background: $color-to;
+  }
+}

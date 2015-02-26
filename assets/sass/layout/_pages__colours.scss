@@ -1,0 +1,58 @@
+.b-365 {
+
+  .logo {
+    &--atw {
+      color: $grey20;
+      fill: currentColor;
+    }
+  }
+
+  .navlink {
+      color: $grey40;
+  }
+
+  .navlink--365:hover { color: $blue; }
+  .navlink--blog:hover { color: $orange; }
+  .navlink--training:hover { color: $green; }
+  .navlink--code:hover { color: $purple; }
+
+  .active > .navlink {
+    &--365 { color: $blue; }
+    &--blog { color: $orange; }
+    &--training { color: $green; }
+    &--code { color: $purple; }
+  }
+
+}
+
+.training {
+  
+  .logo {
+    &--atw {
+      color: $white;
+      fill: currentColor;
+    }
+  }
+  .navlink {
+    @extend %font-sans-normal;
+
+    &:hover {
+      background: $white;
+      text-shadow: 0 1px 0 $grey20;
+    }
+    &--365:hover { color: $blue; }
+    &--blog:hover { color: $orange; }
+    &--training:hover { color: $green; }
+    &--code:hover { color: $purple; }
+  }
+
+  .active > .navlink {
+    background: $white;
+    text-shadow: 0 1px 0 $grey20;
+    &--365 { color: $blue; }
+    &--blog { color: $orange; }
+    &--training { color: $green; }
+    &--code { color: $purple; }
+  }
+
+}

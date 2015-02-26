@@ -23,15 +23,15 @@ html {
 
 html {
   font-family: $font-sans;
-  font-size: ($base-font-size / 16) * 100%; // 16px
+  font-size: 100%; // 16px
   color: $grey20;
   
     @include bp(large) {
-        font-size: ($base-font-size / 16) * 112.5%; // 18px
+        font-size: 112.5%; // 18px
     }
   
     @include bp(x-large) {
-        font-size: ($base-font-size / 16) * 125%; // 20px
+        font-size: 125%; // 20px
     }
 }
 

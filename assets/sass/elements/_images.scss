@@ -28,10 +28,14 @@
 ------------------------------------------------------ */
 
 img {
-  width: 100%;
-  max-width: 100%;
+  width: 104%;
+  margin-left: -2%;
   height: auto;
   vertical-align: middle;   // Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+    @include bp(x-large) {
+      width: 100%;
+      margin-left: 0;
+    }
 }
 
 
